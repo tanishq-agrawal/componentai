@@ -1,16 +1,212 @@
-# React + Vite
+📦 ComponentAI – AI Powered UI Component Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ComponentAI is a frontend-only AI powered web application that allows developers to generate modern UI components using natural language prompts.
+It uses Google Gemini AI to generate clean HTML/CSS/Tailwind/Bootstrap components and provides a live code editor and preview experience.
 
-Currently, two official plugins are available:
+🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 Live URL:
 
-## React Compiler
+(Add your Vercel / GitHub Pages link here)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Features
+🧠 AI-Powered Code Generation
 
-## Expanding the ESLint configuration
+Generate UI components using natural language
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Powered by Google Gemini API
+
+Supports multiple frameworks
+
+🎨 Framework Support
+
+HTML + CSS
+
+HTML + Tailwind CSS
+
+HTML + Bootstrap
+
+HTML + CSS + JavaScript
+
+HTML + Tailwind + Bootstrap
+
+🧩 Live Editor & Preview
+
+Monaco Editor (VS Code-like experience)
+
+Real-time code preview
+
+Fullscreen preview mode
+
+Safe preview using iframe sandboxing
+
+🌗 Theme & Personalization
+
+Dark / Light theme toggle
+
+Editor font size control
+
+Persistent user settings using localStorage
+
+👤 Guest Profile (Frontend-Only)
+
+Generated components count
+
+Recent component history
+
+Restore previous components
+
+Clear history
+
+⚙️ Settings Panel
+
+Editor font size adjustment
+
+Toggle AI code comments
+
+Persistent preferences
+
+📂 History Management
+
+Stores last 5 generated components
+
+Restore any previous generation
+
+LocalStorage-based (no backend)
+
+🛠️ Tech Stack
+Category	Technology
+Frontend	React + Vite
+Styling	Tailwind CSS + CSS Variables
+AI	Google Gemini API
+Code Editor	Monaco Editor
+UI Icons	React Icons
+Routing	React Router
+Deployment	Vercel / GitHub Pages
+📁 Project Structure
+componentai/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── NoPage.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+│
+├── .env
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
+
+🔑 Environment Variables
+
+This project uses environment variables for API security.
+
+Create a .env file in the root directory:
+
+VITE_GEMINI_API_KEY=your_google_gemini_api_key
+
+
+⚠️ Important
+
+The .env file is ignored by Git
+
+This is a frontend-only project; API key is still visible in browser
+
+Suitable for demos and learning, not production
+
+🧪 Running Locally
+1️⃣ Clone the Repository
+git clone https://github.com/YOUR_USERNAME/componentai.git
+cd componentai
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Start Development Server
+npm run dev
+
+
+The app will run at:
+
+http://localhost:5173
+
+📦 Build for Production
+npm run build
+
+
+Preview build locally:
+
+npm run preview
+
+🌍 Deployment
+✅ Vercel (Recommended)
+
+Zero-config deployment
+
+Automatic builds on Git push
+
+Best for frontend-only apps
+
+✅ GitHub Pages
+
+Static deployment
+
+Requires Vite base configuration
+
+Ideal for demos
+
+🔐 Security Notes
+
+No backend authentication
+
+Guest user only
+
+API key exposed in frontend (demo-only)
+
+History & settings stored in localStorage
+
+🧠 Known Limitations
+
+Frontend-only (no backend)
+
+API key visible in browser
+
+AI output size limited to prevent browser freeze
+
+Preview navigation disabled via iframe sandbox
+
+📌 Future Improvements
+
+Backend proxy for API security
+
+User authentication
+
+Export to React components
+
+Prompt templates
+
+Shareable component links
+
+Team workspace support
+
+📜 License
+
+This project is for learning and demonstration purposes.
+Feel free to fork and modify.
+
+🙌 Author
+
+ComponentAI
+Built with ❤️ using React, Vite, and Google Gemini
+
+⭐ If you like this project, consider starring the repository!

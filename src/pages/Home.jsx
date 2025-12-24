@@ -37,8 +37,9 @@ const Home = ({ theme, setTheme }) => {
   const [editorFontSize, setEditorFontSize] = useState(14)
   const [includeComments, setIncludeComments] = useState(true)
 
-  /* ===================== LOAD FROM LOCAL STORAGE ===================== */
+ /* ===================== LOAD FROM LOCAL STORAGE ===================== */
   useEffect(() => {
+    // Load history
     const savedHistory = localStorage.getItem("componentai-history")
     if (savedHistory) {
       const parsed = JSON.parse(savedHistory)
@@ -46,15 +47,24 @@ const Home = ({ theme, setTheme }) => {
 
       if (parsed.length > 0) {
         setPrompt(parsed[0].prompt)
-        setFrameWork(parsed[0].framework)
+
+        const fw = options.find(
+          opt => opt.value === parsed[0].framework
+        )
+        if (fw) setFrameWork(fw)
+
         setCode(parsed[0].code)
         setOutputScreen(true)
       }
     }
 
+    // Load editor font size
     const savedFont = localStorage.getItem("editor-font-size")
-    if (savedFont) setEditorFontSize(Number(savedFont))
+    if (savedFont) {
+      setEditorFontSize(Number(savedFont))
+    }
 
+    // Load include comments setting
     const savedComments = localStorage.getItem("include-comments")
     if (savedComments !== null) {
       setIncludeComments(savedComments === "true")
@@ -115,11 +125,12 @@ const Home = ({ theme, setTheme }) => {
       setOutputScreen(true)
 
       const newEntry = {
-        prompt,
-        framework: frameWork,
-        code: generatedCode,
-        createdAt: Date.now()
-      }
+      prompt,
+      framework: frameWork.value,
+      label: frameWork.label,     
+      code: generatedCode,
+      createdAt: Date.now()
+    }
 
       const updatedHistory = [newEntry, ...history].slice(0, 5)
       setHistory(updatedHistory)
@@ -232,6 +243,36 @@ const Home = ({ theme, setTheme }) => {
             {loading ? <ClipLoader size={18} color="white" /> : <BsStars />}
             Generate
           </button>
+          {/* ===================== HISTORY LIST ===================== */}
+        {history.length > 0 && (
+          <div className="mt-6">
+            <p className="text-sm font-bold text-gray-400 mb-2">
+              Recent Components
+            </p>
+
+            <div className="flex flex-col gap-2">
+              {history.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setPrompt(item.prompt)
+
+                    const fw = options.find(
+                      opt => opt.value === item.framework
+                    )
+                    if (fw) setFrameWork(fw)
+
+                    setCode(item.code)
+                    setOutputScreen(true)
+                  }}
+                  className="text-left text-sm p-2 rounded-lg bg-[var(--tertiary-bg)] hover:opacity-80"
+                >
+                  {item.prompt.slice(0, 60)}...
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         </div>
 
         {/* RIGHT */}
