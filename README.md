@@ -115,7 +115,9 @@ This project uses environment variables for API security.
 
 Create a `.env` file in the root directory:
 
+```text
 VITE_GEMINI_API_KEY=your_google_gemini_api_key
+```
 
 
 ---
