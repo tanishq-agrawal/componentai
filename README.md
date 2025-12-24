@@ -70,7 +70,7 @@ https://componentai-zeta.vercel.app/
 ---
 
 ## 📁 Project Structure
-
+```text
 componentai/
 │
 ├── public/
@@ -104,6 +104,7 @@ componentai/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
 
 
 ---
@@ -131,28 +132,23 @@ VITE_GEMINI_API_KEY=your_google_gemini_api_key
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/componentai.git
+git clone https://github.com/tanishq-agrawal/componentai
 
+```js
 cd componentai
+```
 
 ### 2️⃣ Install Dependencies
 
+```js
 npm install
+```
 
 ### 3️⃣ Start Development Server
 
+```js
 npm run dev
-
-The app will run at:
-
-http://localhost:5173
-
----
-
-## 📦 Build for Production
-
-Preview build locally:
-
+```
 
 
 ---
